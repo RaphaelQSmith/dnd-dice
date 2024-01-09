@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Contact from "./Title";
 
-function App() {
+export const App = () => {
+  const [count, setCount] = useState(0)
+  const [target, setTarget] = useState(10)
+    
+  useEffect(() => {
+    setTarget(Math.floor(Math.random()*21))
+  }, [])
+  
+  const rollDice = () => {
+    setCount(Math.floor(Math.random()*21))
+  } 
+
+  function result() {
+    if(count===20){
+      return <h1>Critical Success!</h1>
+    }
+    else if(count>1 && count<target){
+      return <h1>Failure</h1>
+    }
+    else if (count===1){
+      return <h1>Critical Failure!</h1>
+    }
+    else if (count>=target && count<20){
+      return <h1>Success</h1>}
+    else if(count===0){
+      return <h1>Roll Again...</h1>
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <div className="App" >
+        <Contact />
+          <h1>Target {target}</h1>
+          <button onClick={rollDice}>Roll Dice</button>
+          <h2>{count}</h2>
+          {result()}
+      </div>
+    </>
+    )
+};
 
 export default App;

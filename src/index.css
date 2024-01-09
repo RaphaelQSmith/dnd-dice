@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  text-align: center;
+  padding-top: 8rem;
+  background-color: rgb(16, 16, 17);
+}
+
+h1 {
+  color: rgb(197, 196, 196);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(197, 196, 196);
+  text-align: center;
+}
+
+.App {
+  color: rgb(4, 4, 4);
+  text-align: center;
+}
+
