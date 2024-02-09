@@ -15,18 +15,18 @@ export const App = () => {
 
   function result() {
     if(count===20){
-      return <h1>Critical Success!</h1>
+      return <h2>Critical Success!</h2>
     }
     else if(count>1 && count<target){
-      return <h1>Failure</h1>
+      return <h2>Failure</h2>
     }
     else if (count===1){
-      return <h1>Critical Failure!</h1>
+      return <h2>Critical Failure!</h2>
     }
     else if (count>=target && count<20){
-      return <h1>Success</h1>}
+      return <h2>Success</h2>}
     else if(count===0){
-      return <h1>Roll Again...</h1>
+      return <h2>Roll Again...</h2>
     }
   }
   
@@ -34,7 +34,7 @@ export const App = () => {
     <>
       <div className="App" >
         <Contact />
-          <h1>Target {target}</h1>
+          <h2>Target {target}</h2>
           <button onClick={rollDice}>Roll Dice</button>
           <h2>{count}</h2>
           {result()}
